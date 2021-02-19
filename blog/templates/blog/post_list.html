@@ -1,21 +1,17 @@
 <html>
     <head>
-        <title>Sasha's blog</title>
+        <title>Django Girls blog</title>
     </head>
-<body>
-    <p>тест текста</p>
-    <h1>h1</h1>
-    <h2>h2</h2>
-    <h3>h3; this can continue up to h6</h3>
-    <strong>strong</strong>
-    <em>em</em>
-    <ul>
-        <li>creates a list</li>
-        <li>first item</li>
-        <li>second item</li>
-    </ul>
-    <div>
-        <h1><a href="https://github.com/alchal17/my-first-blog">My repo</a></h1>
-    </div>
-</body>
+    <body>
+        <div>
+            <h1><a href="https://github.com/alchal17/my-first-blog">My repo</a></h1>
+        </div>
+    {% for post in posts %}
+    <article>
+        <time>published: {{ post.published_date }}</time>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </article>
+    {% endfor %}
+    </body>
 </html>
